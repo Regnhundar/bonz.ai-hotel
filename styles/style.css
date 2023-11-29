@@ -11,6 +11,7 @@
     --light: #f1f1f1;
     --dark: #333333;
     --red: #ff2912;
+    --shade: rgba(0, 0, 0, 0.20);
     --title: 'Oxanium', sans-serif;
 }
 
@@ -21,8 +22,19 @@ body {
 }
 
 .wrapper {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 2rem auto;
+    background-color: white;
+    padding: 4rem;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.divider {
+    background-color: var(--shade);
+    border: none;
+    width: 100%;
+    height: 2px;
+    margin: 4rem auto;
 }
 
 /* Kod som gäller specifikt i header */
@@ -123,11 +135,49 @@ body {
 }
 
 /* Kod i main */
-.main__title {}
+
+.main__title-wrapper {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.main__title-top,
+.main__title-bottom {
+    font-family: var(--title);
+    font-size: 10rem;
+}
+
+.main__title-top {
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+
+.main__title-bottom {
+    grid-area: 2 / 2 / span 1 / span 1;
+    justify-self: end;
+}
+
+.main__hotel-image {
+    width: 100%;
+    height: 80vh;
+    background-color: rgba(0, 128, 0, 0.45);
+    background-image: url("/assets/photos/ex-machina-nature.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+
+.main__hotel-image {
+    width: 100%;
+}
 
 @media screen and (max-width: 500px) {
     .wrapper {
+        max-width: 500px;
         margin: 0 auto;
+        padding: 0;
+        box-shadow: none;
     }
 
     .header {
@@ -145,5 +195,10 @@ body {
 
     .header__burger-container {
         display: flex;
+    }
+
+    .main__title-top,
+    .main__title-bottom {
+        font-size: 6rem;
     }
 }
