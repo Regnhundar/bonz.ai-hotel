@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Oxanium:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Utilitykod för hela sidan */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light: #f1f1f1;
+    --dark: #333333;
+    --red: #ff2912;
+    --title: 'Oxanium', sans-serif;
+}
+
+body {
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+/* Kod som gäller specifikt i header */
+
+.header {
+    border-bottom: 2px solid var(--dark);
+    border-top: 2px solid var(--dark);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 5.4140625rem;
+}
+
+.header__desktop-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.header__desktop-navigation-link {
+    padding: 2rem;
+    text-decoration: none;
+    color: var(--dark);
+    transition: .3s ease-in;
+}
+
+.header__desktop-navigation-link:hover {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.header__logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logotype {
+    max-width: 3.7rem;
+    height: auto;
+    align-self: center;
+    justify-self: center;
+    margin-right: 1rem;
+}
+
+.header__headtitle {
+    font-family: var(--title);
+    font-size: 3rem;
+    color: black;
+}
+
+.header__burger-container {
+    display: none;
+    justify-content: end;
+    align-items: center;
+    padding: 2.5rem 2rem 3rem 4rem;
+}
+
+#header__burger-toggle {
+    display: none;
+}
+
+.header__burger-btn,
+.header__burger-btn::before,
+.header__burger-btn::after {
+    display: block;
+    position: absolute;
+    background-color: var(--dark);
+    height: 2px;
+    width: 30px;
+    transition: transform 400ms ease-in-out;
+}
+
+.header__burger-btn::before {
+    content: '';
+    transform-origin: left center;
+    margin-top: -8px;
+}
+
+.header__burger-btn::after {
+    content: '';
+    transform-origin: left center;
+    margin-top: 8px;
+}
+
+#header__burger-toggle:checked+.header__burger-container .header__burger-btn::before {
+    margin-top: 0;
+    transform-origin: center center;
+    transform: rotate(45deg);
+}
+
+#header__burger-toggle:checked+.header__burger-container .header__burger-btn {
+    background: rgba(255, 255, 255, 0);
+}
+
+#header__burger-toggle:checked+.header__burger-container .header__burger-btn::after {
+    margin-top: 0;
+    transform-origin: center center;
+    transform: rotate(-45deg);
+}
+
+/* Kod i main */
+.main__title {}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        margin: 0 auto;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header__desktop-navigation {
+        display: none;
+    }
+
+    .header__logotype {
+        margin: 0 1rem 0 1rem;
+    }
+
+    .header__burger-container {
+        display: flex;
+    }
+}
