@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Oxanium:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Oxanium:wght@200;300;400;500;600;700;800&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap');
 
 /* Utilitykod för hela sidan */
 * {
@@ -8,15 +8,17 @@
 }
 
 :root {
-    --light: #f1f1f1;
-    --dark: #333333;
+    --light: rgb(242, 242, 242);
+    --dark: rgb(51, 51, 51);
     --red: #ff2912;
+    --green: rgb(80, 153, 51);
+    --green-tint: rgba(80, 153, 51, 0.6);
     --shade: rgba(0, 0, 0, 0.20);
     --title: 'Oxanium', sans-serif;
 }
 
 body {
-    font-family: 'Cabin', Helvetica, Arial, sans-serif;
+    font-family: 'Quantico', Helvetica, Arial, sans-serif;
     background-color: var(--light);
     color: var(--dark);
 }
@@ -40,14 +42,34 @@ body {
 /* Kod som gäller specifikt i header */
 
 .header {
-    border-bottom: 2px solid var(--dark);
     border-top: 2px solid var(--dark);
+    border-bottom: 2px solid var(--dark);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    height: 5.4140625rem;
+    height: 100%;
+}
+
+.header__logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logotype {
+    max-width: 3.75rem;
+    height: auto;
+    align-self: center;
+    margin-right: 1rem;
+}
+
+.header__headtitle {
+    font-family: var(--title);
+    font-size: 3rem;
+    color: black;
 }
 
 .header__desktop-navigation {
+    grid-area: auto / 3 / span 1 / span 1;
     display: flex;
     align-items: center;
 }
@@ -62,26 +84,6 @@ body {
 .header__desktop-navigation-link:hover {
     background-color: var(--dark);
     color: var(--light);
-}
-
-.header__logo-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header__logotype {
-    max-width: 3.7rem;
-    height: auto;
-    align-self: center;
-    justify-self: center;
-    margin-right: 1rem;
-}
-
-.header__headtitle {
-    font-family: var(--title);
-    font-size: 3rem;
-    color: black;
 }
 
 .header__burger-container {
@@ -137,7 +139,7 @@ body {
 /* Kod i main */
 
 .main__title-wrapper {
-    margin: 1rem 0;
+    margin: 5rem 0 3rem 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -146,11 +148,17 @@ body {
 .main__title-top,
 .main__title-bottom {
     font-family: var(--title);
-    font-size: 10rem;
+    font-size: 7rem;
 }
 
 .main__title-top {
-    grid-area: 1 / 1 / span 1 / span 1;
+    grid-area: 1 / 1 / span 1 / span 2;
+}
+
+.main__text-span--green {
+    background-color: var(--green);
+    color: var(--light);
+    padding: .8rem 0 0 0;
 }
 
 .main__title-bottom {
@@ -159,17 +167,22 @@ body {
 }
 
 .main__hotel-image {
-    width: 100%;
     height: 80vh;
-    background-color: rgba(0, 128, 0, 0.45);
+    background-color: var(--green-tint);
     background-image: url("/assets/photos/ex-machina-nature.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
 }
 
-.main__hotel-image {
-    width: 100%;
+.main__image-caption {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: 'Special Elite';
+    display: inline-block;
+    margin-top: 4px;
+    padding: 4px;
+    rotate: .5deg;
 }
 
 @media screen and (max-width: 500px) {
@@ -180,7 +193,12 @@ body {
         box-shadow: none;
     }
 
+    .main {
+        padding: 1rem;
+    }
+
     .header {
+        border-top: none;
         display: flex;
         justify-content: space-between;
     }
@@ -197,8 +215,16 @@ body {
         display: flex;
     }
 
+    .main__title-wrapper {
+        margin: 2rem 0;
+    }
+
     .main__title-top,
     .main__title-bottom {
-        font-size: 6rem;
+        font-size: 5rem;
+    }
+
+    .main__hotel-image {
+        height: 40vh;
     }
 }
