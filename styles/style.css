@@ -216,6 +216,11 @@ body {
     font-style: italic;
 }
 
+.footer {
+    border-top: 2px solid var(--dark);
+    padding-top: 4rem;
+}
+
 .footer__navigation {
     width: 100%;
     height: auto;
@@ -228,9 +233,35 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    color: var(--light);
-    background-color: var(--dark);
-    padding: 0.5rem 2rem;
+    padding: 8px 34px;
+    color: white;
+    background-color: black;
+    transition: .3s linear;
+    box-shadow:
+        114px 5px 0 -5px rgba(0, 0, 0, 0.80),
+        218px 10px 0 -10px rgba(0, 0, 0, 0.60),
+        312px 15px 0 -15px rgba(0, 0, 0, 0.40),
+        396px 20px 0 -20px rgba(0, 0, 0, 0.20),
+        -114px 5px 0 -5px rgba(0, 0, 0, 0.80),
+        -218px 10px 0 -10px rgba(0, 0, 0, 0.60),
+        -312px 15px 0 -15px rgba(0, 0, 0, 0.40),
+        -396px 20px 0 -20px rgba(0, 0, 0, 0.20);
+}
+
+.footer__navigation-link:hover {
+    padding: 8px 32px 9px 32px;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow:
+        114px 5px 0 -5px rgba(0, 0, 0, 0.20),
+        218px 10px 0 -10px rgba(0, 0, 0, 0.40),
+        312px 15px 0 -15px rgba(0, 0, 0, 0.60),
+        396px 20px 0 -20px rgba(0, 0, 0, 0.80),
+        -114px 5px 0 -5px rgba(0, 0, 0, 0.20),
+        -218px 10px 0 -10px rgba(0, 0, 0, 0.40),
+        -312px 15px 0 -15px rgba(0, 0, 0, 0.60),
+        -396px 20px 0 -20px rgba(0, 0, 0, 0.80);
 }
 
 .footer__navigation-icon {
