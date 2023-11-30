@@ -39,6 +39,11 @@ body {
     margin: 4rem auto;
 }
 
+.navigation-link--decoration {
+    text-decoration: none;
+    color: var(--dark);
+}
+
 /* Kod som gäller specifikt i header */
 
 .header {
@@ -76,8 +81,6 @@ body {
 
 .header__desktop-navigation-link {
     padding: 2rem;
-    text-decoration: none;
-    color: var(--dark);
     transition: .3s ease-in;
 }
 
@@ -157,7 +160,7 @@ body {
 
 .main__text-span--green {
     background-color: var(--green);
-    color: var(--light);
+    color: white;
     padding: .8rem 0 0 0;
 }
 
@@ -167,9 +170,9 @@ body {
 }
 
 .main__hotel-image {
-    height: 80vh;
+    height: 70vh;
     background-color: var(--green-tint);
-    background-image: url("/assets/photos/ex-machina-nature.jpg");
+    background-image: url("/assets/photos/ex-machina-hotel-juvet-exterior.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
@@ -184,6 +187,57 @@ body {
     padding: 4px;
     rotate: .5deg;
 }
+
+.main__text-span--clipped {
+    border: 2px solid white;
+    padding: 4px;
+    font-size: .9rem;
+    color: rgba(255, 255, 255, 0.788);
+}
+
+.main__testimonials-section {
+    margin: 4rem 0;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+}
+
+.main__hotel-offerings {
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.main__hotel-offerings .main__list-item:before {
+    color: var(--green);
+    font-size: 2rem;
+    content: '✓ ';
+}
+
+.main__testimonial-quote {
+    font-style: italic;
+}
+
+.footer__navigation {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__navigation-link {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: var(--light);
+    background-color: var(--dark);
+    padding: 0.5rem 2rem;
+}
+
+.footer__navigation-icon {
+    font-size: 3rem;
+}
+
+
 
 @media screen and (max-width: 500px) {
     .wrapper {
