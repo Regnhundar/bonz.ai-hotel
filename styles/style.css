@@ -367,6 +367,37 @@ body {
     background-color: var(--blue);
 }
 
+.booking-form__input-section {
+    padding: 2rem;
+    margin: 2rem 0;
+    border: solid var(--dark);
+}
+
+.input-section__title {
+    background-color: var(--blue);
+    color: white;
+}
+
+.main__booking-form {
+    border-top: 2px solid var(--shade);
+    padding: 4rem 0;
+}
+
+
+.booking-form__input-type-submit {
+    margin-top: 4rem;
+    border: 2px solid var(--dark);
+    padding: 1rem 2rem;
+    background-color: white;
+    color: var(--dark);
+    transition: .3s ease-in;
+}
+
+.booking-form__input-type-submit:hover {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
 
 @media screen and (max-width: 500px) {
 
