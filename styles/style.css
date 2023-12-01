@@ -10,9 +10,12 @@
 :root {
     --light: rgb(242, 242, 242);
     --dark: rgb(51, 51, 51);
-    --red: #ff2912;
     --green: rgb(80, 153, 51);
+    --red: rgb(153, 56, 51);
+    --blue: rgb(51 84 153);
     --green-tint: rgba(80, 153, 51, 0.6);
+    --red-tint: rgba(153, 56, 51, 0.8);
+    --blue-tint: rgba(51, 83, 153, 0.6);
     --shade: rgba(0, 0, 0, 0.20);
     --title: 'Oxanium', sans-serif;
 }
@@ -31,13 +34,13 @@ body {
     box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.divider {
+/* .divider {
     background-color: var(--shade);
     border: none;
     width: 100%;
     height: 2px;
     margin: 4rem auto;
-}
+} */
 
 .navigation-link--decoration {
     text-decoration: none;
@@ -158,10 +161,14 @@ body {
     grid-area: 1 / 1 / span 1 / span 2;
 }
 
+.main__text-span {
+    color: white;
+    padding: .8rem 0;
+}
+
 .main__text-span--green {
     background-color: var(--green);
-    color: white;
-    padding: .8rem 0 0 0;
+
 }
 
 .main__title-bottom {
@@ -171,11 +178,14 @@ body {
 
 .main__hotel-image {
     height: 70vh;
-    background-color: var(--green-tint);
-    background-image: url("/assets/photos/ex-machina-hotel-juvet-exterior.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
+}
+
+.main__hotel-image--green {
+    background-color: var(--green-tint);
+    background-image: url("/assets/photos/ex-machina-hotel-juvet-exterior.jpg");
 }
 
 .main__image-caption {
@@ -183,7 +193,7 @@ body {
     color: var(--light);
     font-family: 'Special Elite';
     display: inline-block;
-    margin-top: 4px;
+    margin: 4px 0 4rem 0;
     padding: 4px;
     rotate: .5deg;
 }
@@ -196,7 +206,8 @@ body {
 }
 
 .main__testimonials-section {
-    margin: 4rem 0;
+    border-top: 2px solid var(--shade);
+    padding: 10rem 0 8rem 0;
     grid-template-columns: repeat(2, 1fr);
     display: grid;
 }
@@ -212,13 +223,37 @@ body {
     content: '✓ ';
 }
 
+.main__testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--dark);
+}
+
+.main__the-zuck {
+    transform: translateY(-80px);
+    background-image: url("../assets/photos/the-zuck.png");
+    height: 5.5rem;
+    width: 5.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    background-position: 0 -9px;
+    background-color: white;
+}
+
 .main__testimonial-quote {
     font-style: italic;
+    position: absolute;
+    text-align: center;
+    padding: 2rem 0;
 }
 
 .footer {
     border-top: 2px solid var(--dark);
-    padding-top: 4rem;
+    border-bottom: 2px solid var(--dark);
+    margin-top: 4rem;
 }
 
 .footer__navigation {
@@ -230,13 +265,41 @@ body {
 }
 
 .footer__navigation-link {
+    padding: 8px 34px;
+    color: var(--dark);
+    background-color: white;
+    border-right: 2px solid var(--dark);
+    border-left: 2px solid var(--dark);
+    transition: .3s ease-in;
+    /* border: 2px solid black;
+        box-shadow:
+        114px 5px 0 -5px rgba(0, 0, 0, 0.20),
+        218px 10px 0 -10px rgba(0, 0, 0, 0.40),
+        312px 15px 0 -15px rgba(0, 0, 0, 0.60),
+        396px 20px 0 -20px rgba(0, 0, 0, 0.80),
+        -114px 5px 0 -5px rgba(0, 0, 0, 0.20),
+        -218px 10px 0 -10px rgba(0, 0, 0, 0.40),
+        -312px 15px 0 -15px rgba(0, 0, 0, 0.60),
+        -396px 20px 0 -20px rgba(0, 0, 0, 0.80); */
+}
+
+.footer__navigation-link:hover {
+    padding: 8px 34px;
+    color: var(--light);
+    background-color: var(--dark);
+    border-right: 2px solid var(--dark);
+    border-left: 2px solid var(--dark);
+}
+
+/* .footer__navigation-link:hover {
+    position: absolute;
     display: flex;
     flex-direction: column;
     text-align: center;
     padding: 8px 34px;
     color: white;
     background-color: black;
-    transition: .3s linear;
+    transition: .2s ease-in;
     box-shadow:
         114px 5px 0 -5px rgba(0, 0, 0, 0.80),
         218px 10px 0 -10px rgba(0, 0, 0, 0.60),
@@ -246,31 +309,68 @@ body {
         -218px 10px 0 -10px rgba(0, 0, 0, 0.60),
         -312px 15px 0 -15px rgba(0, 0, 0, 0.40),
         -396px 20px 0 -20px rgba(0, 0, 0, 0.20);
-}
-
-.footer__navigation-link:hover {
-    padding: 8px 32px 9px 32px;
-    color: black;
-    background-color: white;
-    border: 2px solid black;
-    box-shadow:
-        114px 5px 0 -5px rgba(0, 0, 0, 0.20),
-        218px 10px 0 -10px rgba(0, 0, 0, 0.40),
-        312px 15px 0 -15px rgba(0, 0, 0, 0.60),
-        396px 20px 0 -20px rgba(0, 0, 0, 0.80),
-        -114px 5px 0 -5px rgba(0, 0, 0, 0.20),
-        -218px 10px 0 -10px rgba(0, 0, 0, 0.40),
-        -312px 15px 0 -15px rgba(0, 0, 0, 0.60),
-        -396px 20px 0 -20px rgba(0, 0, 0, 0.80);
-}
+} */
 
 .footer__navigation-icon {
     font-size: 3rem;
 }
 
+/* about.html */
+.main__text-span--red {
+    background-color: var(--red);
+}
+
+.main__hotel-image--red {
+    background-color: var(--red-tint);
+    background-image: url("/assets/photos/ex-machina-nature.jpg");
+}
+
+.main__facilities-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4rem;
+    border-top: 2px solid var(--shade);
+    padding: 4rem 0;
+}
+
+.facilities-section__room-article {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+}
+
+.facilities-section__room-article--reversed {
+    grid-template-columns: 1.3fr 0.7fr;
+}
+
+.facilities-section__room-picture {
+    width: 100%;
+}
+
+.facilities-section__description {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    background-color: white;
+}
+
+.facilities-section__description--reversed {
+    padding-left: 0;
+    padding-right: 2rem;
+    order: -1;
+}
+
+
+
+/* Booking.html */
+.main__text-span--blue {
+    background-color: var(--blue);
+}
 
 
 @media screen and (max-width: 500px) {
+
+    /* Alla sidor */
     .wrapper {
         max-width: 500px;
         margin: 0 auto;
@@ -301,15 +401,56 @@ body {
     }
 
     .main__title-wrapper {
-        margin: 2rem 0;
+        margin: 4rem 0 2rem 0;
     }
 
     .main__title-top,
     .main__title-bottom {
-        font-size: 5rem;
+        font-size: 4.5rem;
     }
 
     .main__hotel-image {
         height: 40vh;
     }
+
+    .footer {
+        border-bottom: none;
+    }
+
+    /* Index */
+
+    .main__testimonials-section {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        padding: 4rem 0;
+        gap: 8rem;
+    }
+
+    .main__hotel-offerings {
+        justify-self: center;
+    }
+
+
+
+    /* About */
+
+    .main__facilities-section {
+        gap: 4rem;
+        padding: 4rem 0;
+    }
+
+    .facilities-section__room-article,
+    .facilities-section__room-article--reversed {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .facilities-section__description,
+    .facilities-section__description--reversed {
+        order: 1;
+        padding: 0;
+    }
+
+
+
 }
