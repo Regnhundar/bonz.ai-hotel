@@ -46,14 +46,70 @@
             </article>
 
             <form class="main__booking-form">
+
                 <fieldset class="booking-form__input-section">
-                    <legend class="input-section__title">Put your inputs in here dummy</legend>
+                    <legend class="booking-form__title">When?</legend>
+                    <label class="booking-form__description" for="arrival">When will you arrive?</label>
+                    <input class="booking-form__input booking-form__input-area" type="date" name="arrival" id="arrival">
+                    <p
+                        class="booking-form__description booking-form__description--italic booking-form__description--shaded">
+                        You will not need a return date.
+                    </p>
                 </fieldset>
+
                 <fieldset class="booking-form__input-section">
-                    <legend class="input-section__title">Put your inputs in here dummy</legend>
+                    <legend class="booking-form__title">How many?</legend>
+                    <label class="booking-form__description" for="visitors">How many humans will arrive?</label>
+                    <select class="booking-form__visitor-options booking-form__input-area" name="amount" id="visitors">
+                        <option value="0">Click here to select...</option>
+                        <option value="1">One human</option>
+                        <option value="2">Two humans</option>
+                        <option value="3">Three humans</option>
+                        <option value="4">Four humans</option>
+                        <option value="5">Five humans</option>
+                        <option value="6">Six humans</option>
+                        <option value="7">Seven humans</option>
+                    </select>
                 </fieldset>
+
                 <fieldset class="booking-form__input-section">
-                    <legend class="input-section__title">Put your inputs in here dummy</legend>
+                    <legend class="booking-form__title">What AI?</legend>
+                    <p class="booking-form__description booking-form__description--italic">Which corporations AI do
+                        you wish to meet?</p>
+                    <ul class="booking-form__radio-wrapper">
+                        <li class="booking-form__list-item">
+                            <input class="booking-form__radio-selector" type="radio" name="ai" id="cyberdyne" checked>
+                            <label class="booking-form__description" for="cyberdyne">Cyberdyne Systems</label>
+                        </li>
+
+                        <li class="booking-form__list-item">
+                            <input class="booking-form__radio-selector" type="radio" name="ai" id="ocp">
+                            <label class="booking-form__description" for="ocp">OCP</label>
+                        </li>
+
+                        <li class="booking-form__list-item">
+                            <input class="booking-form__radio-selector" type="radio" name="ai" id="bluebird">
+                            <label class="booking-form__description" for="bluebird">Bluebird</label>
+                        </li>
+                        <li class="booking-form__list-item">
+                            <input class="booking-form__radio-selector" type="radio" name="ai" id="zocom">
+                            <label class="booking-form__description" for="zocom">ZoCom</label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <fieldset class="booking-form__input-section">
+                    <legend class="booking-form__title">Contact info?</legend>
+                    <label class="booking-form__description" for="firstName">Name:</label>
+                    <input class="booking-form__input booking-form__input-area" type="text" name="firstName"
+                        id="firstName" placeholder="Enter your name...">
+                    <label class="booking-form__description" for="telephone">Phone number:</label>
+                    <input class="booking-form__input booking-form__input-area" type="tel" name="telephone"
+                        id="telephone" placeholder="Enter your phone number...">
+                    <label class="booking-form__description" for="email">E-mail:</label>
+                    <input class="booking-form__input booking-form__input-area" type="email" name="email" id="email"
+                        placeholder="E-mail...">
+
                 </fieldset>
                 <a href="/pages/confirmation.html"
                     class="booking-form__input-type-submit navigation-link--decoration">Proceed</a>

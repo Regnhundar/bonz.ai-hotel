@@ -27,7 +27,7 @@ body {
 }
 
 .wrapper {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 2rem auto;
     background-color: white;
     padding: 4rem;
@@ -84,7 +84,7 @@ body {
 
 .header__desktop-navigation-link {
     padding: 2rem;
-    transition: .3s ease-in;
+    transition: .2s ease-in;
 }
 
 .header__desktop-navigation-link:hover {
@@ -173,7 +173,7 @@ body {
 
 .main__title-bottom {
     grid-area: 2 / 2 / span 1 / span 1;
-    justify-self: end;
+
 }
 
 .main__hotel-image {
@@ -270,7 +270,7 @@ body {
     background-color: white;
     border-right: 2px solid var(--dark);
     border-left: 2px solid var(--dark);
-    transition: .3s ease-in;
+    transition: .2s ease-in;
     /* border: 2px solid black;
         box-shadow:
         114px 5px 0 -5px rgba(0, 0, 0, 0.20),
@@ -331,33 +331,40 @@ body {
     grid-template-rows: repeat(3, 1fr);
     gap: 4rem;
     border-top: 2px solid var(--shade);
-    padding: 4rem 0;
+    padding: 6rem 0;
 }
 
 .facilities-section__room-article {
     display: grid;
-    grid-template-columns: .7fr 1.3fr;
-}
-
-.facilities-section__room-article--reversed {
-    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .facilities-section__room-picture {
-    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    object-fit: cover;
+    padding-right: 2rem;
+}
+
+.facilities-section__room-picture--reversed {
+    padding-right: 0;
+    padding-left: 2rem;
 }
 
 .facilities-section__description {
     display: flex;
     flex-direction: column;
-    padding-left: 2rem;
+    justify-content: center;
     background-color: white;
 }
 
 .facilities-section__description--reversed {
-    padding-left: 0;
-    padding-right: 2rem;
     order: -1;
+}
+
+.facilities-section__room-description {
+    margin: .5rem 0;
+    line-height: 1.2;
 }
 
 
@@ -370,27 +377,85 @@ body {
 .booking-form__input-section {
     padding: 2rem;
     margin: 2rem 0;
-    border: solid var(--dark);
-}
-
-.input-section__title {
-    background-color: var(--blue);
-    color: white;
+    display: flex;
+    flex-direction: column;
+    border: solid var(--shade);
 }
 
 .main__booking-form {
     border-top: 2px solid var(--shade);
     padding: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+    column-gap: 2rem;
+}
+
+.booking-form__title {
+    background-color: var(--blue);
+    color: white;
+}
+
+.booking-form__description {
+    padding: .5rem 0;
+    cursor: pointer;
+
+}
+
+.booking-form__description--italic {
+    font-style: italic;
+}
+
+.booking-form__description--shaded {
+    padding-top: 2rem;
+    color: var(--shade);
 }
 
 
+
+.booking-form__input-area {
+    padding: .7rem;
+    height: 50px;
+}
+
+.booking-form__input-area:hover {
+    border: 2px solid var(--blue);
+}
+
+.booking-form__list-wrapper {
+    list-style: none;
+}
+
+.booking-form__list-item {
+    display: flex;
+    align-items: center;
+    padding: .7rem 0;
+    transition: .2s linear;
+}
+
+.booking-form__list-item:hover {
+    color: var(--blue);
+    accent-color: var(--blue);
+    font-weight: bold;
+}
+
+.booking-form__radio-selector {
+    accent-color: var(--blue);
+    cursor: pointer;
+    margin-right: 1rem;
+    width: 25px;
+    height: 25px;
+}
+
 .booking-form__input-type-submit {
-    margin-top: 4rem;
+    width: 150px;
+    text-align: center;
     border: 2px solid var(--dark);
     padding: 1rem 2rem;
     background-color: white;
     color: var(--dark);
-    transition: .3s ease-in;
+    transition: .2s ease-in;
+    justify-self: end;
+    grid-area: auto / 2 / auto / auto;
 }
 
 .booking-form__input-type-submit:hover {
@@ -399,18 +464,15 @@ body {
 }
 
 
+
 @media screen and (max-width: 500px) {
 
     /* Alla sidor */
     .wrapper {
         max-width: 500px;
         margin: 0 auto;
-        padding: 0;
         box-shadow: none;
-    }
-
-    .main {
-        padding: 1rem;
+        padding: 0;
     }
 
     .header {
@@ -476,12 +538,15 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .facilities-section__room-picture {
+        padding: 0;
+        max-width: 100%;
+    }
+
     .facilities-section__description,
     .facilities-section__description--reversed {
         order: 1;
         padding: 0;
+        margin: .5rem 0;
     }
-
-
-
 }
