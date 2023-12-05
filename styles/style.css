@@ -13,9 +13,9 @@
     --green: rgb(80, 153, 51);
     --red: rgb(153, 56, 51);
     --blue: rgb(51 84 153);
-    --green-tint: rgba(80, 153, 51, 0.6);
-    --red-tint: rgba(153, 56, 51, 0.8);
-    --blue-tint: rgba(51, 83, 153, 0.6);
+    --green-tint: rgb(15 54 0 / 50%);
+    --red-tint: rgb(93 8 4 / 50%);
+    --blue-tint: rgb(0 33 102 / 50%);
     --shade: rgba(0, 0, 0, 0.20);
     --title: 'Oxanium', sans-serif;
 }
@@ -176,7 +176,57 @@ body {
 
 }
 
-.main__hotel-image {
+.main__hero {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.main__hero::before {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+}
+
+.main__hero--green-tint::before {
+    background-color: var(--green-tint);
+}
+
+.main__hero-image {
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.main__hero-text-container {
+    background-color: white;
+    position: relative;
+    display: flex;
+}
+
+.main__hero-text {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: 'Special Elite';
+    margin: 4px 0 4rem 0;
+    padding: 4px;
+    rotate: .5deg;
+}
+
+.main__hero-text--clipped {
+    border: 2px solid white;
+    font-size: .9rem;
+    color: rgba(255, 255, 255, 0.788);
+}
+
+
+/* .main__hotel-image {
     height: 70vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -203,7 +253,7 @@ body {
     padding: 4px;
     font-size: .9rem;
     color: rgba(255, 255, 255, 0.788);
-}
+} */
 
 .main__testimonials-section {
     border-top: 2px solid var(--shade);
@@ -320,10 +370,14 @@ body {
     background-color: var(--red);
 }
 
-.main__hotel-image--red {
+.main__hero--red-tint::before {
+    background-color: var(--red-tint);
+}
+
+/* .main__hotel-image--red {
     background-color: var(--red-tint);
     background-image: url("/assets/photos/ex-machina-nature.jpg");
-}
+} */
 
 .main__facilities-section {
     display: grid;
@@ -374,6 +428,9 @@ body {
     background-color: var(--blue);
 }
 
+.main__hero--blue::before {
+    background-color: var(--blue-tint);
+}
 
 .main__booking-form {
     border-top: 2px solid var(--shade);
