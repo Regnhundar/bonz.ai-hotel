@@ -18,7 +18,7 @@
             <figure class="header__logo-wrapper">
                 <img class="header__logotype" src="../assets/logo/bonz.ai-logo-black-symbol.png" alt="Bonzai logotype">
                 <figcaption>
-                    <h1 class="header__headtitle">Bonz.ai</h1>
+                    <h1 class="header__headtitle">Banz.ai</h1>
                 </figcaption>
             </figure>
 
@@ -46,7 +46,8 @@
             </article>
 
             <figure class="main__hero main__hero--blue">
-                <img class="main__hero-image" src="/assets/photos/ex-machina-arrival.jpg" alt="Arriving at hotel">
+                <img class="main__hero-image main__hero-image--top" src="/assets/photos/ex-machina-arrival.jpg"
+                    alt="Arriving at hotel">
                 <figcaption class="main__hero-text-container">
                     <p class="main__hero-text">Human habitat. You will never <span
                             class="main__hero-text main__hero-text--clipped">want
@@ -54,14 +55,14 @@
                 </figcaption>
             </figure>
 
-            <form class="main__booking-form">
-
+            <form class="main__booking-form" action="confirmation.html" method="get">
+                <h2 class="booking-form__headtitle">Enter your data below.</h2>
                 <fieldset class="booking-form__input-section">
                     <legend class="booking-form__title">When?</legend>
                     <label class="booking-form__headline booking-form__headline--pointer booking-form__headline--italic"
                         for="arrival">When will you
                         arrive?</label>
-                    <input class="booking-form__input booking-form__input-area" type="date" name="arrival" id="arrival">
+                    <input class="booking-form__input-area" type="date" name="arrival" id="arrival">
                     <p class="booking-form__fine-print">
                         You will not need a return date.
                     </p>
@@ -122,18 +123,17 @@
                 <fieldset class="booking-form__input-section">
                     <legend class="booking-form__title">Contact info?</legend>
                     <label class="booking-form__contact-info" for="firstName">Name:</label>
-                    <input class="booking-form__input booking-form__input-area" type="text" name="firstName"
-                        id="firstName" placeholder="Enter your name...">
+                    <input class="booking-form__input-area" type="text" name="firstName" id="firstName"
+                        placeholder="Enter your name...">
                     <label class="booking-form__contact-info" for="telephone">Phone number:</label>
-                    <input class="booking-form__input booking-form__input-area" type="tel" name="telephone"
-                        id="telephone" placeholder="Enter your phone number...">
+                    <input class="booking-form__input-area" type="tel" name="telephone" id="telephone"
+                        placeholder="Enter your phone number...">
                     <label class="booking-form__contact-info" for="email">E-mail:</label>
-                    <input class="booking-form__input booking-form__input-area" type="email" name="email" id="email"
+                    <input class="booking-form__input-area" type="email" name="email" id="email"
                         placeholder="Enter your e-mail...">
 
                 </fieldset>
-                <a href="/pages/confirmation.html"
-                    class="booking-form__input-type-submit navigation-link--decoration">Proceed</a>
+                <input type="submit" class="booking-form__submit-button" value="Proceed">
 
             </form>
 
