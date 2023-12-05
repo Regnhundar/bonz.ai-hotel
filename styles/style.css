@@ -374,20 +374,22 @@ body {
     background-color: var(--blue);
 }
 
-.booking-form__input-section {
-    padding: 2rem;
-    margin: 2rem 0;
-    display: flex;
-    flex-direction: column;
-    border: solid var(--shade);
-}
 
 .main__booking-form {
     border-top: 2px solid var(--shade);
     padding: 4rem 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
+}
+
+.booking-form__input-section {
+    padding: 2rem;
+    margin: 2rem 0;
+
+    display: flex;
+    flex-direction: column;
+    border: solid var(--shade);
 }
 
 .booking-form__title {
@@ -395,22 +397,22 @@ body {
     color: white;
 }
 
-.booking-form__description {
-    padding: .5rem 0;
-    cursor: pointer;
-
+.booking-form__headline {
+    padding: 1rem 0 2rem 0;
 }
 
-.booking-form__description--italic {
+.booking-form__headline--italic {
     font-style: italic;
 }
 
-.booking-form__description--shaded {
+.booking-form__headline--pointer {
+    cursor: pointer;
+}
+
+.booking-form__fine-print {
     padding-top: 2rem;
     color: var(--shade);
 }
-
-
 
 .booking-form__input-area {
     padding: .7rem;
@@ -444,6 +446,10 @@ body {
     margin-right: 1rem;
     width: 25px;
     height: 25px;
+}
+
+.booking-form__contact-info {
+    padding: 1rem 0;
 }
 
 .booking-form__input-type-submit {
@@ -493,6 +499,10 @@ body {
         display: flex;
     }
 
+    .main {
+        padding: 0 1rem;
+    }
+
     .main__title-wrapper {
         margin: 4rem 0 2rem 0;
     }
@@ -524,7 +534,6 @@ body {
     }
 
 
-
     /* About */
 
     .main__facilities-section {
@@ -548,5 +557,15 @@ body {
         order: 1;
         padding: 0;
         margin: .5rem 0;
+    }
+
+    /* Booking.html */
+    .main__booking-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .booking-form__input-type-submit {
+        align-self: end;
     }
 }
