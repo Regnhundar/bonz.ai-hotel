@@ -34,11 +34,6 @@ body {
     box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.navigation-link--decoration {
-    text-decoration: none;
-    color: var(--dark);
-}
-
 /* Kod som gäller specifikt i header */
 
 .header {
@@ -75,6 +70,8 @@ body {
 }
 
 .header__desktop-navigation-link {
+    text-decoration: none;
+    color: var(--dark);
     padding: 2rem;
     transition: .2s ease-in;
 }
@@ -136,44 +133,46 @@ body {
 
 /* Kod i main */
 
-.main__title-wrapper {
+.hero__title-wrapper {
     margin: 5rem 0 3rem 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: 1fr 1.fr;
 }
 
-.main__title-top,
-.main__title-bottom {
+.hero__title-top,
+.hero__title-bottom {
     font-family: var(--title);
     font-size: 7rem;
+    margin: auto 0;
 }
 
-.main__title-top {
+.hero__title-top {
     grid-area: 1 / 1 / span 1 / span 2;
+
 }
 
-.main__text-span {
+.hero__text-span {
     color: white;
     padding: .8rem 0;
 }
 
-.main__text-span--green {
+.hero__text-span--green {
     background-color: var(--green);
 
 }
 
-.main__title-bottom {
-    grid-area: 2 / 2 / span 1 / span 1;
+.hero__title-bottom {
+    grid-area: 2 / 3 / span 1 / span 1;
 
 }
 
-.main__hero {
+.hero__image-container {
     position: relative;
     max-width: 100%;
 }
 
-.main__hero::before {
+.hero__image-container::before {
     position: absolute;
     top: 0;
     right: 0;
@@ -182,32 +181,32 @@ body {
     content: "";
 }
 
-.main__hero--green-tint::before {
+.hero__image-container::before {
     background-color: var(--green-tint);
 }
 
-.main__hero-image {
+.hero__image {
     object-fit: cover;
     display: block;
     width: 100%;
     aspect-ratio: 2/1;
 }
 
-.main__hero-image--top {
+.hero__image--top {
     object-position: top;
 }
 
-.main__hero-image--center {
+.hero__image--center {
     object-position: center;
 }
 
-.main__hero-text-container {
+.hero__text-container {
     background-color: white;
     position: relative;
     display: flex;
 }
 
-.main__hero-text {
+.hero__text {
     background-color: var(--dark);
     color: var(--light);
     font-family: 'Special Elite';
@@ -216,7 +215,7 @@ body {
     rotate: .5deg;
 }
 
-.main__hero-text--clipped {
+.hero__text--clipped {
     border: 2px solid white;
     font-size: .9rem;
     color: rgba(255, 255, 255, 0.788);
@@ -320,6 +319,7 @@ body {
 
 .footer__navigation-link {
     padding: 8px 34px;
+    text-decoration: none;
     color: var(--dark);
     background-color: white;
     border-right: 2px solid var(--dark);
@@ -340,11 +340,11 @@ body {
 }
 
 /* about.html */
-.main__text-span--red {
+.hero__text-span--red {
     background-color: var(--red);
 }
 
-.main__hero--red-tint::before {
+.hero__image-container--red-tint::before {
     background-color: var(--red-tint);
 }
 
@@ -414,15 +414,15 @@ body {
 
 
 /* Booking.html */
-.main__text-span--blue {
+.hero__text-span--blue {
     background-color: var(--blue);
 }
 
-.main__hero--blue::before {
+.hero__image-container--blue-tint::before {
     background-color: var(--blue-tint);
 }
 
-.main__booking-form {
+.booking-form {
     border-top: 2px solid var(--shade);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -511,7 +511,7 @@ body {
     cursor: pointer;
 }
 
-.booking-form__submit-button {
+.booking-form__submit-btn {
     width: 150px;
     cursor: pointer;
     font-family: 'Quantico', Helvetica, Arial, sans-serif;
@@ -525,19 +525,29 @@ body {
     grid-area: auto / 2 / auto / auto;
 }
 
-.booking-form__submit-button:hover {
+.booking-form__submit-btn:hover {
     background-color: var(--dark);
     color: var(--light);
 }
 
 
+@media screen and (max-width: 850px) {
 
-@media screen and (max-width: 500px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
 
-    /* Alla sidor */
+    .header__logotype {
+        margin: 0 1rem 0 1rem;
+    }
 
-    :root {
-        font-size: 14px;
+    .header__desktop-navigation {
+        display: none;
+    }
+
+    .header__burger-container {
+        display: flex;
     }
 
     .wrapper {
@@ -547,38 +557,34 @@ body {
         padding: 0;
     }
 
-    .header {
-        border-top: none;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .header__desktop-navigation {
-        display: none;
-    }
-
-    .header__logotype {
-        margin: 0 1rem 0 1rem;
-    }
-
-    .header__burger-container {
-        display: flex;
-    }
-
     .main {
         padding: 0 1rem;
     }
 
-    .main__title-wrapper {
+}
+
+@media screen and (max-width: 600px) {
+
+    /* Alla sidor */
+
+    :root {
+        font-size: 14px;
+    }
+
+    .header {
+        border-top: none;
+    }
+
+    .hero__title-wrapper {
         margin: 4rem 0 2rem 0;
     }
 
-    .main__title-top,
-    .main__title-bottom {
+    .hero__title-top,
+    .hero__title-bottom {
         font-size: 4.5rem;
     }
 
-    .main__hotel-image {
+    .hero__image {
         height: 40vh;
     }
 
@@ -632,12 +638,12 @@ body {
     }
 
     /* Booking.html */
-    .main__booking-form {
+    .booking-form {
         display: flex;
         flex-direction: column;
     }
 
-    .booking-form__submit-button {
+    .booking-form__submit-btn {
         align-self: end;
     }
 }

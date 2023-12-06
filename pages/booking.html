@@ -18,15 +18,14 @@
             <figure class="header__logo-wrapper">
                 <img class="header__logotype" src="../assets/logo/bonz.ai-logo-black-symbol.png" alt="Bonzai logotype">
                 <figcaption>
-                    <h1 class="header__headtitle">Banz.ai</h1>
+                    <h1 class="header__headtitle">bonz.ai</h1>
                 </figcaption>
             </figure>
 
             <nav class="header__desktop-navigation">
-                <a href="../index.html" class="header__desktop-navigation-link navigation-link--decoration">Home</a>
-                <a href="/pages/about.html"
-                    class="header__desktop-navigation-link navigation-link--decoration">About</a>
-                <a href="#" class="header__desktop-navigation-link navigation-link--decoration">Booking</a>
+                <a href="../index.html" class="header__desktop-navigation-link">Home</a>
+                <a href="/pages/about.html" class="header__desktop-navigation-link">About</a>
+                <a href="#" class="header__desktop-navigation-link">Booking</a>
             </nav>
 
             <nav class="header__mobile-navigation">
@@ -40,29 +39,32 @@
 
         <!-- Main -->
         <main class="main">
-            <article class="main__title-wrapper">
-                <h2 class="main__title-top"><span class="main__text-span main__text-span--blue">Boo</span>k your</h2>
-                <h2 class="main__title-bottom">storage</h2>
-            </article>
 
-            <figure class="main__hero main__hero--blue">
-                <img class="main__hero-image main__hero-image--top" src="/assets/photos/ex-machina-arrival.jpg"
-                    alt="Arriving at hotel">
-                <figcaption class="main__hero-text-container">
-                    <p class="main__hero-text">Human habitat. You will never <span
-                            class="main__hero-text main__hero-text--clipped">want
-                            to</span> leave.</p>
-                </figcaption>
-            </figure>
+            <section class="hero">
+                <article class="hero__title-wrapper">
+                    <h2 class="hero__title-top"><span class="hero__text-span hero__text-span--blue">Boo</span>k your
+                    </h2>
+                    <h2 class="hero__title-bottom">storage</h2>
+                </article>
+                <figure class="hero__image-container hero__image-container--blue-tint">
+                    <img class="hero__image hero__image--top" src="/assets/photos/ex-machina-arrival.jpg"
+                        alt="Arriving at the hotel">
+                    <figcaption class="hero__text-container">
+                        <p class="hero__text">Human habitat. You will never <span
+                                class="hero__text hero__text--clipped">want
+                                to</span> leave.</p>
+                    </figcaption>
+                </figure>
+            </section>
 
-            <form class="main__booking-form" action="confirmation.html" method="get">
+            <form class="booking-form" action="confirmation.html" method="get">
                 <h2 class="booking-form__headtitle">Enter your data below.</h2>
                 <fieldset class="booking-form__input-section">
                     <legend class="booking-form__title">When?</legend>
                     <label class="booking-form__headline booking-form__headline--pointer booking-form__headline--italic"
                         for="arrival">When will you
                         arrive?</label>
-                    <input class="booking-form__input-area" type="date" name="arrival" id="arrival">
+                    <input class="booking-form__input-area" type="date" name="arrival" id="arrival" required>
                     <p class="booking-form__fine-print">
                         You will not need a return date.
                     </p>
@@ -73,8 +75,7 @@
                     <label class="booking-form__headline booking-form__headline--italic" for="visitors">
                         How many humans will arrive?
                     </label>
-                    <select class="booking-form__visitor-options booking-form__input-area" name="visitors"
-                        id="visitors">
+                    <select class="booking-form__input-area" name="visitors" id="visitors">
                         <option value="0">Click here to select...</option>
                         <option value="1">One human</option>
                         <option value="2">Two humans</option>
@@ -123,7 +124,7 @@
                 <fieldset class="booking-form__input-section">
                     <legend class="booking-form__title">Contact info?</legend>
                     <label class="booking-form__contact-info" for="firstName">Name:</label>
-                    <input class="booking-form__input-area" type="text" name="firstName" id="firstName"
+                    <input class="booking-form__input-area" type="text" name="name" id="name"
                         placeholder="Enter your name...">
                     <label class="booking-form__contact-info" for="telephone">Phone number:</label>
                     <input class="booking-form__input-area" type="tel" name="telephone" id="telephone"
@@ -131,9 +132,9 @@
                     <label class="booking-form__contact-info" for="email">E-mail:</label>
                     <input class="booking-form__input-area" type="email" name="email" id="email"
                         placeholder="Enter your e-mail...">
-
                 </fieldset>
-                <input type="submit" class="booking-form__submit-button" value="Proceed">
+
+                <input type="submit" class="booking-form__submit-btn" value="Proceed">
 
             </form>
 
@@ -142,7 +143,7 @@
         <!-- Footer -->
         <footer class="footer">
             <nav class="footer__navigation">
-                <a href="#" class="footer__navigation-link navigation-link--decoration">
+                <a href="#" class="footer__navigation-link">
                     <p class="footer__navigation-icon">
                         &#9043;</p>
                     <p>Return</p>
