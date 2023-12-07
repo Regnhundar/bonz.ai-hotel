@@ -167,10 +167,6 @@ body {
     justify-self: end;
 }
 
-/* .hero__title-bottom--centered {
-    justify-self: center;
-} */
-
 .hero__image-container {
     position: relative;
     max-width: 100%;
