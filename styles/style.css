@@ -41,7 +41,6 @@ body {
     border-bottom: 2px solid var(--dark);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    height: 100%;
 }
 
 .header__logo-wrapper {
@@ -69,14 +68,14 @@ body {
     align-items: center;
 }
 
-.header__desktop-navigation-link {
+.header__navigation-link {
     text-decoration: none;
     color: var(--dark);
     padding: 2rem;
     transition: .2s ease-in;
 }
 
-.header__desktop-navigation-link:hover {
+.header__navigation-link:hover {
     background-color: var(--dark);
     color: var(--light);
 }
@@ -131,40 +130,40 @@ body {
     transform: rotate(-45deg);
 }
 
-/* Kod i main */
-
-.hero__title-wrapper {
-    margin: 5rem 0 3rem 0;
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    grid-template-rows: 1fr 1.fr;
+/* Kod i main, specifikt hero på alla sidor. */
+.hero {
+    margin: 5rem 0 4rem 0;
 }
 
-.hero__title-top,
-.hero__title-bottom {
-    font-family: var(--title);
+.hero__page-title {
     font-size: 7rem;
-    margin: auto 0;
+    font-family: var(--title);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 3rem;
 }
 
 .hero__title-top {
     grid-area: 1 / 1 / span 1 / span 2;
-
 }
 
-.hero__text-span {
+.hero__white-text {
     color: white;
     padding: .8rem 0;
 }
 
-.hero__text-span--green {
+.hero__white-text--green-background {
     background-color: var(--green);
-
 }
 
 .hero__title-bottom {
-    grid-area: 2 / 3 / span 1 / span 1;
+    grid-area: 2 / 2 / span 1 / span 2;
+    justify-self: end;
+}
 
+.hero__title-bottom--centered {
+    justify-self: center;
 }
 
 .hero__image-container {
@@ -190,13 +189,10 @@ body {
     display: block;
     width: 100%;
     aspect-ratio: 2/1;
-}
-
-.hero__image--top {
     object-position: top;
 }
 
-.hero__image--center {
+.hero__image--center-aligned {
     object-position: center;
 }
 
@@ -210,7 +206,7 @@ body {
     background-color: var(--dark);
     color: var(--light);
     font-family: 'Special Elite';
-    margin: 4px 0 4rem 0;
+    margin-top: 4px;
     padding: 4px;
     rotate: .5deg;
 }
@@ -219,86 +215,6 @@ body {
     border: 2px solid white;
     font-size: .9rem;
     color: rgba(255, 255, 255, 0.788);
-}
-
-.main__offerings-section {
-    border-top: 2px solid var(--shade);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 3rem;
-}
-
-.offerings-section__headtitle {
-    grid-area: auto / auto / span 1 / span 2;
-    font-family: var(--title);
-    margin-top: 3rem;
-    font-size: 2rem;
-}
-
-.offerings-section__body-text {
-    line-height: 1.7;
-}
-
-.offerings-section__subtitle {
-    font-family: var(--title);
-    font-size: 1.5rem;
-    padding-bottom: .5rem;
-}
-
-.main__hotel-offerings {
-    list-style: none;
-    font-size: 1.3rem;
-    margin-bottom: 6rem;
-    justify-self: center;
-    align-self: start;
-}
-
-.main__list-item {
-    display: flex;
-    align-items: center;
-}
-
-.main__list-item::before {
-    color: var(--green);
-    font-size: 1.5rem;
-    content: '✓';
-    margin-right: 1rem;
-}
-
-.main__list-item--negative::before {
-    content: 'X';
-    color: var(--red);
-}
-
-.main__testimonial {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    border: 2px solid var(--dark);
-    grid-area: auto / auto / span 1 / span 2;
-    justify-self: center;
-    padding: 2rem 0;
-}
-
-.main__testimonial-picture {
-    transform: translateY(-80px);
-    background-image: url("../assets/photos/the-zuck.png");
-    height: 5.5rem;
-    width: 5.5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: 2px solid black;
-    background-position: 0 -9px;
-    background-color: white;
-}
-
-.main__testimonial-quote {
-    font-style: italic;
-    position: absolute;
-    text-align: center;
-    padding: 2rem 0;
 }
 
 /* Kod i footer */
@@ -339,8 +255,90 @@ body {
     font-size: 3rem;
 }
 
+/* index.html */
+
+.promise-section {
+    border-top: 2px solid var(--shade);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+}
+
+.promise-section__headtitle {
+    grid-area: auto / auto / span 1 / span 2;
+    font-family: var(--title);
+    margin-top: 3rem;
+    font-size: 2rem;
+}
+
+.promise-section__body-text {
+    line-height: 1.7;
+}
+
+.promise-section__subtitle {
+    font-family: var(--title);
+    font-size: 1.5rem;
+    padding-bottom: .5rem;
+}
+
+.promise-section__list {
+    list-style: none;
+    font-size: 1.3rem;
+    justify-self: center;
+    align-self: start;
+}
+
+.promise-section__list-item {
+    display: flex;
+    align-items: center;
+}
+
+.promise-section__list-item::before {
+    color: var(--green);
+    font-size: 1.5rem;
+    content: '✓';
+    margin-right: 1rem;
+}
+
+.promise-section__list-item--negative::before {
+    content: 'X';
+    color: var(--red);
+}
+
+.promise-section__testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border: 2px solid var(--dark);
+    grid-area: auto / auto / span 1 / span 2;
+    justify-self: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.promise-section__testimonial-picture {
+    transform: translateY(-80px);
+    background-image: url("../assets/photos/the-zuck.png");
+    height: 5.5rem;
+    width: 5.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    background-position: 0 -9px;
+    background-color: white;
+}
+
+.promise-section__testimonial-quote {
+    font-style: italic;
+    position: absolute;
+    text-align: center;
+    padding: 2rem 0;
+}
+
 /* about.html */
-.hero__text-span--red {
+.hero__white-text--red-background {
     background-color: var(--red);
 }
 
@@ -348,7 +346,7 @@ body {
     background-color: var(--red-tint);
 }
 
-.main__facilities-section {
+.facilities-section {
     display: flex;
     flex-direction: column;
     border-top: 2px solid var(--shade);
@@ -363,24 +361,26 @@ body {
 
 .facilities-section__room-article {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    grid-template-columns: 1.10fr .9fr;
 }
 
-.facilities-section__room-article--border {
-    border-top: 2px solid var(--shade);
-    border-bottom: 2px solid var(--shade);
+.facilities-section__room-article--reversed {
+    grid-template-columns: .9fr 1.10fr;
 }
+
+
 
 .facilities-section__room-picture {
     height: 100%;
-    max-width: 500px;
+    width: 100%;
     object-fit: cover;
-    padding-right: 2rem;
+    aspect-ratio: 2/1;
+
 }
 
-.facilities-section__room-picture--reversed {
-    padding-right: 0;
-    padding-left: 2rem;
+.facilities-section__room-picture--top-aligned {
+    object-position: top;
 }
 
 .facilities-section__room-title {
@@ -399,8 +399,8 @@ body {
 }
 
 .facilities-section__room-description {
-    margin: .5rem 0;
-    line-height: 1.2;
+    margin: .2rem 0;
+    line-height: 1.5;
 }
 
 .facilities-section__divider {
@@ -414,7 +414,7 @@ body {
 
 
 /* Booking.html */
-.hero__text-span--blue {
+.hero__white-text--blue-background {
     background-color: var(--blue);
 }
 
@@ -477,18 +477,17 @@ body {
     border: 2px solid var(--blue);
 }
 
-.booking-form__list-wrapper {
+.booking-form__ai-list-wrapper {
     list-style: none;
 }
 
-.booking-form__list-item {
+.booking-form__ai-list-item {
     display: flex;
     align-items: center;
-    padding: .7rem 0;
     transition: .2s linear;
 }
 
-.booking-form__list-item:hover {
+.booking-form__radio-description:hover {
     color: var(--blue);
     accent-color: var(--blue);
     font-weight: bold;
@@ -496,6 +495,7 @@ body {
 
 .booking-form__radio-description {
     cursor: pointer;
+    padding: .7rem 5rem .7rem 0;
 }
 
 .booking-form__radio-selector {
@@ -531,11 +531,56 @@ body {
 }
 
 
+
+@media screen and (max-width: 960px) {
+    .wrapper {
+        margin: 0 auto;
+        padding: 2rem;
+        box-shadow: none;
+    }
+}
+
 @media screen and (max-width: 850px) {
+
+    .wrapper {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .hero__page-title {
+        padding-top: 5rem;
+    }
+
+    .main {
+        padding: 0 1rem;
+    }
+
+    /* index.html */
+    .promise-section__testimonial {
+        width: 70%;
+        margin-top: 5rem;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Alla sidor */
+
 
     .header {
         display: flex;
         justify-content: space-between;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: white;
+        border-bottom: none;
+        box-shadow: 0 2px .5rem var(--shade);
     }
 
     .header__logotype {
@@ -550,84 +595,27 @@ body {
         display: flex;
     }
 
-    .wrapper {
-        max-width: 100%;
-        margin: 0;
-        box-shadow: none;
-        padding: 0;
+    .hero__page-title {
+        font-size: 5rem;
     }
-
-    .main {
-        padding: 0 1rem;
-    }
-
-}
-
-@media screen and (max-width: 600px) {
-
-    /* Alla sidor */
-
-    :root {
-        font-size: 14px;
-    }
-
-    .header {
-        border-top: none;
-    }
-
-    .hero__title-wrapper {
-        margin: 4rem 0 2rem 0;
-    }
-
-    .hero__title-top,
-    .hero__title-bottom {
-        font-size: 4.5rem;
-    }
-
-    .hero__image {
-        height: 40vh;
-    }
-
-    .footer {
-        border-bottom: none;
-    }
-
-    /* Index */
-
-    .main__testimonials-section {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
-        padding: 4rem 0;
-        gap: 8rem;
-    }
-
-    .main__hotel-offerings {
-        justify-self: center;
-    }
-
 
     /* About */
 
-    .main__facilities-section {
-        padding: 0;
-        grid-template-rows: auto;
+    .facilities-section__title {
+        margin-top: 3rem;
     }
 
     .facilities-section__room-article,
     .facilities-section__room-article--reversed {
-        display: grid;
         grid-template-columns: 1fr;
-        padding: 0;
-    }
-
-    .facilities-section__room-article--border {
-        padding: 2rem 0;
-        margin: 2rem 0;
     }
 
     .facilities-section__room-picture {
-        padding: 0;
         max-width: 100%;
+    }
+
+    .facilities-section__room-title {
+        padding: 1rem 0;
     }
 
     .facilities-section__description-wrapper,
@@ -635,6 +623,10 @@ body {
         order: 1;
         padding: 0;
         margin: .5rem 0;
+    }
+
+    .facilities-section__divider {
+        margin: 4rem auto;
     }
 
     /* Booking.html */
@@ -646,4 +638,91 @@ body {
     .booking-form__submit-btn {
         align-self: end;
     }
+}
+
+@media screen and (max-width: 600px) {
+
+    /* Alla sidor */
+
+    :root {
+        font-size: 14px;
+    }
+
+    .hero__page-title {
+        font-size: 5rem;
+    }
+
+    .footer {
+        border-bottom: none;
+    }
+
+    /* Index */
+
+    .promise-section {
+        grid-template-columns: 1fr;
+    }
+
+
+}
+
+@media screen and (max-width: 470px) {
+
+    /* Alla sidor */
+
+    .hero__page-title {
+        font-size: 4rem;
+    }
+
+    /* index.html */
+
+    .promise-section {
+        column-gap: 0;
+    }
+
+    .promise-section__article {
+        grid-area: auto/auto/ auto / span 2;
+        max-width: 400px;
+    }
+
+    .promise-section__testimonial {
+        width: 100%;
+    }
+
+    .promise-section__list {
+        justify-self: start;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+    /* Alla sidor */
+
+    .hero__page-title {
+        font-size: 3.4rem;
+    }
+
+    .hero__text {
+        font-size: .9rem;
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+
+    .hero__text {
+        background-color: white;
+        color: var(--dark);
+        font-family: 'Quantico', Helvetica, Arial, sans-serif;
+        margin-top: 2px;
+        padding: 4px;
+        rotate: 0deg;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .hero__text--clipped {
+        border: none;
+        color: var(--dark);
+    }
+
 }

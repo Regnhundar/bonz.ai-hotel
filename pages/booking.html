@@ -18,14 +18,14 @@
             <figure class="header__logo-wrapper">
                 <img class="header__logotype" src="../assets/logo/bonz.ai-logo-black-symbol.png" alt="Bonzai logotype">
                 <figcaption>
-                    <h1 class="header__headtitle">bonz.ai</h1>
+                    <h2 class="header__headtitle">bonz.ai</h2>
                 </figcaption>
             </figure>
 
             <nav class="header__desktop-navigation">
-                <a href="../index.html" class="header__desktop-navigation-link">Home</a>
-                <a href="/pages/about.html" class="header__desktop-navigation-link">About</a>
-                <a href="#" class="header__desktop-navigation-link">Booking</a>
+                <a href="../index.html" class="header__navigation-link">Home</a>
+                <a href="/pages/about.html" class="header__navigation-link">About</a>
+                <a href="#" class="header__navigation-link">Booking</a>
             </nav>
 
             <nav class="header__mobile-navigation">
@@ -41,14 +41,15 @@
         <main class="main">
 
             <section class="hero">
-                <article class="hero__title-wrapper">
-                    <h2 class="hero__title-top"><span class="hero__text-span hero__text-span--blue">Boo</span>k your
-                    </h2>
-                    <h2 class="hero__title-bottom">storage</h2>
-                </article>
+                <h1 class="hero__page-title">
+                    <span class="hero__title-top"><span
+                            class="hero__white-text hero__white-text--blue-background">Boo</span>k
+                        your</span>
+                    <span class="hero__title-bottom hero__title-bottom--centered">storage</span>
+                </h1>
+
                 <figure class="hero__image-container hero__image-container--blue-tint">
-                    <img class="hero__image hero__image--top" src="/assets/photos/ex-machina-arrival.jpg"
-                        alt="Arriving at the hotel">
+                    <img class="hero__image" src="/assets/photos/ex-machina-arrival.jpg" alt="Arriving at the hotel">
                     <figcaption class="hero__text-container">
                         <p class="hero__text">Human habitat. You will never <span
                                 class="hero__text hero__text--clipped">want
@@ -59,6 +60,7 @@
 
             <form class="booking-form" action="confirmation.html" method="get">
                 <h2 class="booking-form__headtitle">Enter your data below.</h2>
+
                 <fieldset class="booking-form__input-section">
                     <legend class="booking-form__title">When?</legend>
                     <label class="booking-form__headline booking-form__headline--pointer booking-form__headline--italic"
@@ -92,29 +94,29 @@
                     <p class="booking-form__headline booking-form__headline--italic">
                         Which corporations AI do
                         you wish to meet?</p>
-                    <ul class="booking-form__list-wrapper">
+                    <ul class="booking-form__ai-list-wrapper">
 
-                        <li class="booking-form__list-item">
+                        <li class="booking-form__ai-list-item">
                             <input class="booking-form__radio-selector" type="radio" name="ai" id="cyberdyne" checked>
                             <label class="booking-form__radio-description" for="cyberdyne">Cyberdyne Systems</label>
                         </li>
 
-                        <li class="booking-form__list-item">
+                        <li class="booking-form__ai-list-item">
                             <input class="booking-form__radio-selector" type="radio" name="ai" id="ocp">
                             <label class="booking-form__radio-description" for="ocp">OCP</label>
                         </li>
 
-                        <li class="booking-form__list-item">
+                        <li class="booking-form__ai-list-item">
                             <input class="booking-form__radio-selector" type="radio" name="ai" id="tyrell">
                             <label class="booking-form__radio-description" for="tyrell">Tyrell Corporation</label>
                         </li>
 
-                        <li class="booking-form__list-item">
+                        <li class="booking-form__ai-list-item">
                             <input class="booking-form__radio-selector" type="radio" name="ai" id="bluebird">
                             <label class="booking-form__radio-description" for="bluebird">Bluebird</label>
                         </li>
 
-                        <li class="booking-form__list-item">
+                        <li class="booking-form__ai-list-item">
                             <input class="booking-form__radio-selector" type="radio" name="ai" id="zocom">
                             <label class="booking-form__radio-description" for="zocom">ZoCom</label>
                         </li>
@@ -123,7 +125,7 @@
 
                 <fieldset class="booking-form__input-section">
                     <legend class="booking-form__title">Contact info?</legend>
-                    <label class="booking-form__contact-info" for="firstName">Name:</label>
+                    <label class="booking-form__contact-info" for="name">Name:</label>
                     <input class="booking-form__input-area" type="text" name="name" id="name"
                         placeholder="Enter your name...">
                     <label class="booking-form__contact-info" for="telephone">Phone number:</label>
