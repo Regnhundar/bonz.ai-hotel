@@ -158,13 +158,18 @@ body {
 }
 
 .hero__title-bottom {
-    grid-area: 2 / 2 / span 1 / span 2;
+    grid-area: 2 / 2 / span 1 / span 1;
+    justify-self: center;
+}
+
+.hero__title-bottom--wide {
+    grid-area: 2 / 1 / span 1 / span 2;
     justify-self: end;
 }
 
-.hero__title-bottom--centered {
+/* .hero__title-bottom--centered {
     justify-self: center;
-}
+} */
 
 .hero__image-container {
     position: relative;
@@ -512,7 +517,7 @@ body {
 }
 
 .booking-form__submit-btn {
-    width: 150px;
+    width: fit-content;
     cursor: pointer;
     font-family: 'Quantico', Helvetica, Arial, sans-serif;
     text-align: center;
@@ -528,6 +533,17 @@ body {
 .booking-form__submit-btn:hover {
     background-color: var(--dark);
     color: var(--light);
+}
+
+/* Confirmation */
+
+.hero__white-text--purple-background {
+    background-color: rgb(107 51 153);
+}
+
+.confirmation-card__room-image {
+    width: 50%;
+
 }
 
 
@@ -600,10 +616,6 @@ body {
     }
 
     /* About */
-
-    .facilities-section__title {
-        margin-top: 3rem;
-    }
 
     .facilities-section__room-article,
     .facilities-section__room-article--reversed {
