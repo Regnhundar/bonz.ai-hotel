@@ -16,7 +16,7 @@
         <header class="header">
             <a href="#" class="header__logo-navigation-link">
                 <figure class="header__logo-wrapper">
-                    <img class="header__logotype" src="../assets/logo/bonz.ai-logo-black-symbol.png"
+                    <img class="header__logotype" src="/assets/logo/bonz.ai-logo-black-symbol.png"
                         alt="Bonzai logotype">
                     <figcaption>
                         <h2 class="header__headtitle">bonz.ai</h2>
@@ -24,33 +24,38 @@
                 </figure>
             </a>
 
-            <nav class="header__desktop-navigation">
-                <a href="../index.html" class="header__navigation-link">Home</a>
-                <a href="/pages/about.html" class="header__navigation-link">About</a>
-                <a href="/pages/booking.html" class="header__navigation-link">Booking</a>
-            </nav>
-
-            <nav class="header__mobile-navigation">
-                <input id="header__burger-toggle" type="checkbox">
-                <label class="header__burger-container" for="header__burger-toggle">
+            <nav class="header__page-navigation">
+                <input class="header__burger-toggle" id="burger-toggle" type="checkbox">
+                <label class="header__burger-container" for="burger-toggle">
                     <figure class="header__burger-btn"></figure>
                 </label>
-            </nav>
+                <ul class="header__navigation-list header__navigation-list--blue">
+                    <li class="header__navigation-list-item">
+                        <a href="/index.html" class="header__navigation-link">Home</a>
+                    </li>
+                    <li class="header__navigation-list-item"><a href="/pages/about.html"
+                            class="header__navigation-link">About</a>
+                    </li>
 
+                    <li class="header__navigation-list-item"><a href="/pages/booking.html"
+                            class="header__navigation-link">Booking</a>
+                    </li>
+                </ul>
+            </nav>
         </header>
 
 
 
         <!-- Main -->
         <main class="main">
-            <h1 class="pagetitle">
-                <span class="pagetitle__top">
-                    <span class="pagetitle__highlight">3</span>
-                    rooms match</span>
 
+            <h1 class="pagetitle"> <span class="pagetitle__top"><span class="pagetitle__highlight">3</span>rooms
+                    match</span>
                 <span class="pagetitle__bottom">your query:</span>
             </h1>
+
             <section class="room-section">
+
                 <article class="room-section__room-card room-section__room-card--blue">
                     <h2 class="room-section__room-title">No-escape room in blue.</h2>
                     <figure class="room-section__image-tint room-section__image-tint--blue-tint"><img
@@ -65,8 +70,6 @@
                         your exclusive retreat.</p>
                     <button class="room-section__card-btn">Confirm selection</button>
                 </article>
-
-
 
                 <article class="room-section__room-card room-section__room-card--red">
                     <h2 class="room-section__room-title">No-escape room in red.</h2>
@@ -98,12 +101,10 @@
                     <button class="room-section__card-btn">Confirm selection</button>
                 </article>
 
-
             </section>
 
-
-
         </main>
+
         <!-- Footer -->
         <footer class="footer">
             <nav class="footer__navigation">

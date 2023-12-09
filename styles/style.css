@@ -68,16 +68,23 @@ body {
     color: black;
 }
 
-.header__desktop-navigation {
+.header__page-navigation {
     grid-area: auto / 3 / span 1 / span 1;
     display: flex;
     align-items: center;
 }
 
+.header__navigation-list {
+    display: flex;
+    list-style: none;
+    padding: 2rem 0;
+}
+
 .header__navigation-link {
+    padding: 2rem;
+    width: 100%;
     text-decoration: none;
     color: var(--dark);
-    padding: 2rem;
     transition: .2s ease-in;
 }
 
@@ -90,11 +97,17 @@ body {
     display: none;
     justify-content: end;
     align-items: center;
-    padding: 2.5rem 2rem 3rem 4rem;
+    padding: 2rem 2rem 3rem 4rem;
 }
 
-#header__burger-toggle {
-    display: none;
+.header__burger-toggle {
+    opacity: 0;
+}
+
+.header__burger-toggle:checked~.header__navigation-list {
+    visibility: visible;
+    top: 6.7rem;
+    right: 0.3rem;
 }
 
 .header__burger-btn,
@@ -103,38 +116,40 @@ body {
     display: block;
     position: absolute;
     background-color: var(--dark);
-    height: 2px;
+    height: 3px;
     width: 30px;
-    transition: transform 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
 }
 
 .header__burger-btn::before {
     content: '';
-    transform-origin: left center;
+    transform-origin: left;
     margin-top: -8px;
 }
 
 .header__burger-btn::after {
     content: '';
-    transform-origin: left center;
+    transform-origin: left;
     margin-top: 8px;
 }
 
-#header__burger-toggle:checked+.header__burger-container .header__burger-btn::before {
+.header__burger-toggle:checked+.header__burger-container .header__burger-btn::before {
     margin-top: 0;
-    transform-origin: center center;
+    transform-origin: center;
     transform: rotate(45deg);
 }
 
-#header__burger-toggle:checked+.header__burger-container .header__burger-btn {
-    background: rgba(255, 255, 255, 0);
+.header__burger-toggle:checked+.header__burger-container .header__burger-btn {
+    background-color: rgba(255, 255, 255, 0);
+    transform: rotate(180deg);
 }
 
-#header__burger-toggle:checked+.header__burger-container .header__burger-btn::after {
+.header__burger-toggle:checked+.header__burger-container .header__burger-btn::after {
     margin-top: 0;
-    transform-origin: center center;
+    transform-origin: center;
     transform: rotate(-45deg);
 }
+
 
 /* Kod i main, specifikt hero på alla sidor. */
 
@@ -704,7 +719,7 @@ body {
         left: 0;
         z-index: 1000;
         background-color: white;
-        border-bottom: none;
+        border: none;
         box-shadow: 0 2px .5rem var(--shade);
     }
 
@@ -712,8 +727,32 @@ body {
         margin: 0 1rem 0 1rem;
     }
 
-    .header__desktop-navigation {
-        display: none;
+    .header__page-navigation {
+        flex-direction: column;
+    }
+
+    .header__navigation-list {
+        background-color: white;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        padding: 0;
+        width: 200px;
+        transition: 0.5s;
+        top: 6.7rem;
+        right: -100%;
+        text-align: center;
+        border: 2px solid var(--dark);
+    }
+
+    .header__navigation-list-item:nth-of-type(2) {
+        border-top: 2px solid var(--light);
+        border-bottom: 2px solid var(--light);
+    }
+
+    .header__navigation-link {
+        display: block;
     }
 
     .header__burger-container {
@@ -722,6 +761,12 @@ body {
 
     .hero__page-title {
         font-size: 5rem;
+    }
+
+    /*index.html*/
+
+    .header__navigation-list--green {
+        box-shadow: 0 0 .8rem .2rem var(--green);
     }
 
     /* About */
@@ -750,6 +795,11 @@ body {
         margin: 4rem auto;
     }
 
+    .header__navigation-list--red {
+        box-shadow: 0 0 .8rem .2rem var(--red);
+
+    }
+
     /* Booking.html */
 
     .booking-form {
@@ -759,6 +809,10 @@ body {
 
     .booking-form__submit-btn {
         align-self: end;
+    }
+
+    .header__navigation-list--blue {
+        box-shadow: 0 0 .8rem .2rem var(--blue);
     }
 
     /* confirmation.html */
