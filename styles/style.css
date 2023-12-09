@@ -746,7 +746,7 @@ body {
         border: 2px solid var(--dark);
     }
 
-    .header__navigation-list-item:nth-of-type(2) {
+    .header__navigation-list-item--border {
         border-top: 2px solid var(--light);
         border-bottom: 2px solid var(--light);
     }
