@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Oxanium:wght@200;300;400;500;600;700;800&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&display=swap');
 
 /* Utilitykod för hela sidan */
 
@@ -304,10 +304,13 @@ body {
     padding-bottom: .5rem;
 }
 
+.promise-section__list-article {
+    justify-self: center;
+}
+
 .promise-section__list {
     list-style: none;
     font-size: 1.3rem;
-    justify-self: center;
     align-self: start;
 }
 
@@ -344,7 +347,7 @@ body {
 .promise-section__testimonial-picture {
     transform: translateY(-80px);
     /* Bilden på Mark Zuckerberg är urklippt från Madame Tussauds vaxkabinett. */
-    background-image: url("../assets/photos/the-zuck.png");
+    background-image: url("../assets/photos/theZuck.png");
     height: 5.5rem;
     width: 5.5rem;
     background-size: cover;
@@ -879,7 +882,7 @@ body {
         width: 100%;
     }
 
-    .promise-section__list {
+    .promise-section__list-article {
         justify-self: start;
     }
 
@@ -929,9 +932,9 @@ body {
         background-color: white;
         color: var(--dark);
         font-family: 'Quantico', Helvetica, Arial, sans-serif;
-        margin-top: 2px;
-        padding: 4px;
         rotate: 0deg;
+        margin-top: 1px;
+        padding: 1px;
         font-size: 1rem;
         font-weight: bold;
     }

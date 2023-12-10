@@ -11,7 +11,7 @@
 
 <body>
     <div class="wrapper">
-
+        <!-- Header -->
         <header class="header">
             <a href="#" class="header__logo-navigation-link">
                 <figure class="header__logo-wrapper">
@@ -23,9 +23,9 @@
             </a>
 
             <nav class="header__page-navigation">
-                <input class="header__burger-toggle" id="burger-toggle" type="checkbox">
-                <label class="header__burger-container" for="burger-toggle">
-                    <figure class="header__burger-btn"></figure>
+                <input class="header__burger-toggle" id="burger" type="checkbox">
+                <label class="header__burger-container" for="burger">
+                    <span class="header__burger-btn"></span>
                 </label>
                 <ul class="header__navigation-list header__navigation-list--green">
                     <li class="header__navigation-list-item">
@@ -41,7 +41,7 @@
                 </ul>
             </nav>
         </header>
-
+        <!-- Main -->
         <main class="main">
 
             <section class="hero">
@@ -78,14 +78,15 @@
                         alive or our name is not banz.ai!</p>
                 </article>
 
-                <ul class="promise-section__list">
+                <article class="promise-section__list-article">
                     <h3 class="promise-section__subtitle">That we offer...</h3>
-                    <li class="promise-section__list-item">A beautiful location</li>
-                    <li class="promise-section__list-item">Privacy</li>
-                    <li class="promise-section__list-item">Human food</li>
-                    <li class="promise-section__list-item promise-section__list-item--negative">AI overlords</li>
-                </ul>
-
+                    <ul class="promise-section__list">
+                        <li class="promise-section__list-item">A beautiful location</li>
+                        <li class="promise-section__list-item">Privacy</li>
+                        <li class="promise-section__list-item">Human food</li>
+                        <li class="promise-section__list-item promise-section__list-item--negative">AI overlords</li>
+                    </ul>
+                </article>
                 <article class="promise-section__testimonial">
                     <figure class="promise-section__testimonial-picture"></figure>
                     <h2 class="promise-section__testimonial-quote">"A very human experiance."</h2>
@@ -94,6 +95,7 @@
             </section>
 
         </main>
+        <!-- Footer -->
         <footer class="footer">
             <nav class="footer__navigation">
                 <a href="#" class="footer__navigation-link">
